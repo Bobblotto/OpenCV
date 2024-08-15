@@ -35,6 +35,37 @@ line2 = cv2.line(img2, (200, 375), (150, 325), (0, 255, 255), 5)
 line2 = cv2.line(img2, (150, 325), (225, 325), (0, 255, 255), 5)
 line2 = cv2.line(img2, (225, 325), (250, 250), (0, 255, 255), 5)
 
-
 cv2.imshow("img", line2)
+cv2.waitKey(0)
+
+text = cv2.putText(img2, "Hello!", (250, 250), cv2.FONT_HERSHEY_PLAIN, 5, (255, 255, 255))
+                                
+cv2.imshow("img", text)
+cv2.waitKey(0)
+
+rows, cols = img2.shape[0:2]
+
+rot = cv2.getRotationMatrix2D((rows/2, cols/2), 90, 1)
+rot =  cv2.warpAffine(img2, rot, (rows, cols))
+cv2.imshow("img", rot)
+cv2.waitKey(0)
+
+rot = cv2.getRotationMatrix2D((rows/2, cols/2), 180, 1)
+rot =  cv2.warpAffine(img2, rot, (rows, cols))
+cv2.imshow("img", rot)
+cv2.waitKey(0)
+
+rot = cv2.getRotationMatrix2D((rows/2, cols/2), 270, 1)
+rot =  cv2.warpAffine(img2, rot, (rows, cols))
+cv2.imshow("img", rot)
+cv2.waitKey(0)
+
+rot = cv2.getRotationMatrix2D((rows/2, cols/2), 45, 1)
+rot =  cv2.warpAffine(img2, rot, (rows, cols))
+cv2.imshow("img", rot)
+cv2.waitKey(0)
+
+rot = cv2.getRotationMatrix2D((rows/2, cols/2), 225, 1)
+rot =  cv2.warpAffine(img2, rot, (rows, cols))
+cv2.imshow("img", rot)
 cv2.waitKey(0)
