@@ -69,3 +69,15 @@ rot = cv2.getRotationMatrix2D((rows/2, cols/2), 225, 1)
 rot =  cv2.warpAffine(img2, rot, (rows, cols))
 cv2.imshow("img", rot)
 cv2.waitKey(0)
+
+border = cv2.copyMakeBorder(img, 35, 35, 35, 35, cv2.BORDER_CONSTANT)
+cv2.imshow("img", border)
+cv2.waitKey(0)
+
+border = cv2.copyMakeBorder(img, 100, 100, 0, 0, cv2.BORDER_CONSTANT)
+cv2.imshow("img", border)
+cv2.waitKey(0)
+
+border = cv2.copyMakeBorder(img, 100, 100, 100, 100, cv2.BORDER_ISOLATED)
+cv2.imshow("img", border)
+cv2.waitKey(0)
